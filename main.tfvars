@@ -1,3 +1,3 @@
 bucket = "bucket1"
-key    = "test/file"
+key    = "test"
 region = "us-east-1"
