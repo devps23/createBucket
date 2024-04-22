@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  prometheus_role:
+  expense-create:
     group: create
     label_template: ${COUNT}
     lock_behavior: none
