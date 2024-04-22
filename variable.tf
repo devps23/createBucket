@@ -1,3 +1,2 @@
-variable "instanceType" {}
-variable "component"{}
+variable "instanceType"{}
 variable "env" {}
