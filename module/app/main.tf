@@ -3,7 +3,7 @@ resource "aws_instance" "web" {
   instance_type = "t3.small"
 
   tags = {
-    Name = var.commponent
+    Name = var.component
   }
 }
 resource "aws_route53_record" "route" {

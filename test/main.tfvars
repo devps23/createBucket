@@ -1,3 +1,2 @@
-instanceType = "t3.small"
-component="frontend"
+component = "frontend"
 env="env"
