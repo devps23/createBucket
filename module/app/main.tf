@@ -13,3 +13,24 @@ resource "aws_route53_record" "route" {
   records = [aws_instance.instance.private_ip]
   ttl =40
 }
+//create a Prometheus role
+resource "aws_iam_role" "Prometheus_role" {
+  name = "Prometheus-role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Sid    = ""
+        Principal = {
+          Service = "ec2.amazonaws.com"
+        }
+      },
+    ]
+  })
+
+  tags = {
+    name = "Prometheus-role"
+  }
+}
