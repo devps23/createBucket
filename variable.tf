@@ -1,0 +1,2 @@
+variable "instanceType" {}
+variable "component"{}
