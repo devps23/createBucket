@@ -1,2 +1,2 @@
-variable "instanceType"{}
+
 variable "env" {}
