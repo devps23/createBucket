@@ -5,4 +5,4 @@ terraform {
     region = "us-east-1"
   }
 }
-resource "aws_instance" "instance" {}
+resource "null_resource" "instance" {}
