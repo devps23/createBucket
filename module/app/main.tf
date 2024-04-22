@@ -6,8 +6,8 @@ resource "aws_instance" "web" {
     Name = var.component
   }
 }
-resource "aws_route53_record" "route" {
-  name = "frontend-dev"
-  type = "A"
-  zone_id = ""
-}
+//resource "aws_route53_record" "route" {
+//  name = "frontend-dev"
+//  type = "A"
+//  zone_id = ""
+//}
