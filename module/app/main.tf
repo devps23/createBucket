@@ -1,6 +1,6 @@
 resource "aws_instance" "instance" {
   ami           = data.aws_ami.ami.image_id
-  instance_type = "t3.small"
+  instance_type = "t3.micro"
 
   tags = {
     Name = var.component
