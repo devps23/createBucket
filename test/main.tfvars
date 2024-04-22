@@ -1,2 +1,3 @@
-instanceType = "t3.micro"
+instanceType = "t3.small"
 component="frontend"
+env="dev"
