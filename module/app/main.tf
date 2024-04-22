@@ -10,4 +10,5 @@ resource "aws_route53_record" "route" {
   name = "${var.component}-dev"
   type = "A"
   zone_id = "Z09583601MY3QCL7AJKBT"
+  records = [aws_route53_record.route.name]
 }
