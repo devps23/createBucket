@@ -2,7 +2,7 @@
 resource "aws_instance" "instance" {
   ami           = data.aws_ami.ami.image_id
   instance_type = "t3.micro"
-  iam_instance_profile = aws_iam_instance_profile
+  iam_instance_profile = aws_iam_instance_profile.instance_profile.name
   tags = {
     Name = var.component
   }
