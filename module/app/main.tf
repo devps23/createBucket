@@ -1,4 +1,4 @@
-resource "aws_instance" "web" {
+resource "aws_instance" "instance" {
   ami           = data.aws_ami.ami.image_id
   instance_type = "t3.small"
 
@@ -7,8 +7,8 @@ resource "aws_instance" "web" {
   }
 }
 resource "aws_route53_record" "route" {
-  name = "${var.component}-dev"
+  name = "${var.component}-${var.env}"
   type = "A"
   zone_id = "Z09583601MY3QCL7AJKBT"
-  records = [aws_route53_record.route.name]
+  records = [aws_instance.instance.private_ip]
 }
