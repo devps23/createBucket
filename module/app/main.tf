@@ -34,3 +34,7 @@ resource "aws_iam_role" "Prometheus_role" {
     name = var.role
   }
 }
+resource "aws_iam_instance_profile" "instance_profile" {
+  name = var.role
+  role = aws_iam_role.Prometheus_role.name
+}
