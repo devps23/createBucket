@@ -7,8 +7,8 @@ https://github.com/prometheus/prometheus/releases/download/v2.45.4/prometheus-2.
 2. create ansible playbook
 
 ***********************************************************************
-use case:
-to monitor single ec2 instance in prometheus , need node_exporter config file
-node_exporter will translate ec2 instance to prometheus format
+node_exporter will translate service to prometheus format
 
 The Node Exporter is an agent that gathers system metrics and exposes them in a format which can be ingested by Prometheus.
+to monitor the number of ec2instances in prometheus, we need to use ec2-sd-config
+
