@@ -15,6 +15,13 @@ resource "aws_route53_record" "route" {
   ttl =40
 }
 
+resource "aws_route53_record" "route" {
+  name = "${var.component}-internal"
+  type = "A"
+  zone_id = var.zone_id
+  records = [aws_instance.instance.private_ip]
+  ttl =40
+}
 resource "aws_iam_role" "Prometheus_role" {
   name = var.role
   assume_role_policy = jsonencode({
