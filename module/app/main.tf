@@ -6,6 +6,7 @@ resource "aws_instance" "instance" {
   tags = {
     Name = var.component
   }
+
 }
 resource "aws_route53_record" "route" {
   name = "${var.component}-${var.env}"
@@ -24,3 +25,18 @@ resource "aws_iam_instance_profile" "instance_profile" {
   role = aws_iam_role.Prometheus_role.name
 }
 //give the permissions with the help of policy
+resource "aws_iam_policy" "policy" {
+  name        = "prometheus-role"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "ec2:DescribeInstances",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
