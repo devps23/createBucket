@@ -15,32 +15,9 @@ resource "aws_route53_record" "route" {
   ttl =40
 }
 
-//resource "aws_route53_record" "route" {
-//  name = "${var.component}-internal"
-//  type = "A"
-//  zone_id = var.zone_id
-//  records = [aws_instance.instance.private_ip]
-//  ttl =40
-//}
 resource "aws_iam_role" "Prometheus_role" {
-  name = var.role
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "sts:AssumeRole"
-        Effect = "Allow"
-        Sid    = ""
-        Principal = {
-          Service = "ec2.amazonaws.com"
-        }
-      },
-    ]
-  })
-
-  tags = {
-    name = var.role
-  }
+  name               = "instance_role"
+  assume_role_policy = data.aws_iam_policy_document.instance-assume-role-policy.json
 }
 resource "aws_iam_instance_profile" "instance_profile" {
   name = var.role

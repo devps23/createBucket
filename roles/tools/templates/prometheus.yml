@@ -1,0 +1,16 @@
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped                                                                              from this config.
+  - job_name: "prometheus"
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: ["localhost:9090"]
+#  - job_name: "ec2-node"
+#    static_configs:
+#      - targets: ["172.31.23.96:9100"]
+   - job_name: "ec2-sd-config"
+      ec2_sd_configs:
+        - region: us-east-1
+          port: 9100
