@@ -1,4 +1,4 @@
-//attach aws instance profile to aws instance
+//attach aws instance profile to aws instance to access
 resource "aws_instance" "instance" {
   ami           = data.aws_ami.ami.image_id
   instance_type = "t3.micro"
@@ -39,3 +39,4 @@ resource "aws_iam_instance_profile" "instance_profile" {
   name = var.role
   role = aws_iam_role.Prometheus_role.name
 }
+//give the permissions with the help of policy
