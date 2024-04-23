@@ -18,7 +18,7 @@ resource "aws_route53_record" "route" {
 }
 
 resource "aws_iam_role" "Prometheus_role" {
-  name               = "instance_role"
+  name               = "Prometheus_role"
   assume_role_policy = data.aws_iam_policy_document.instance-assume-role-policy.json
 
 }
