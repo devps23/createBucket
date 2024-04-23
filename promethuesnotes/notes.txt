@@ -1,0 +1,6 @@
+Prometheus:
+
+1.Download and unarchive Prometheus from prometheus.io
+https://github.com/prometheus/prometheus/releases/download/v2.45.4/prometheus-2.45.4.linux-amd64.tar.gz
+
+2. create ansible playbook
