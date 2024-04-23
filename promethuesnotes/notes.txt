@@ -2,6 +2,13 @@ Prometheus:
 
 1.Download and unarchive Prometheus from prometheus.io
 https://github.com/prometheus/prometheus/releases/download/v2.45.4/prometheus-2.45.4.linux-amd64.tar.gz
-2.start the service
+2.copy the prometheus service file
+3.start the prometheus service
 2. create ansible playbook
 
+***********************************************************************
+use case:
+to monitor single ec2 instance in prometheus , need node_exporter config file
+node_exporter will translate ec2 instance to prometheus format
+
+The Node Exporter is an agent that gathers system metrics and exposes them in a format which can be ingested by Prometheus.
