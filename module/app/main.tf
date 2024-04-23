@@ -26,7 +26,7 @@ resource "aws_iam_instance_profile" "instance_profile" {
 }
 //give the permissions with the help of policy
 resource "aws_iam_policy" "policy" {
-  name        = "prometheus-role"
+  name        = "Prometheus-role"
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
