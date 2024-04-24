@@ -51,19 +51,20 @@ resource "aws_iam_policy" "policy" {
 }
 //create provisiners
 
-//resource "aws_instance" "test" {
-//
-//  connection {
-//    type     = "ssh"
-//    user     = var.ssh_user
-//    password = var.ssh_pass
-//    host     = self.public_ip
-//  }
-//
-//  provisioner "remote-exec" {
-//    inline = [
-//      "sudo pip install ansible",
-//       "sudo install nginx"
-//    ]
-//  }
-//}
+resource "null_resource" "test" {
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = var.ssh_user
+      password = var.ssh_pass
+      host     = aws_instance.instance.public_ip
+    }
+    inline = [
+      "sudo pip install ansible",
+      "sudo install nginx"
+    ]
+  }
+
+
+
+}
