@@ -27,11 +27,15 @@ EC2 SD configurations allow retrieving scrape targets from AWS EC2 instances.
        values: <string>, [...] ]
 add these filters in configuration file i.e., prometheus.yml file.
 * add "visual" to the tag in aws_instance
-* to know the target (ec2-instances) name,instanceid,.....,use relabelling (relabel_config)
+* to know the target of other servers(ec2-instances) name,instanceid,.....,use relabelling (relabel_config)
 A scrape_config section specifies a set of targets and parameters.
 to know the label name and value use
  relabel_configs:
       - source_labels: [__address__]
+
+
+* for loacal server prometheus no need of install node_Exporter and monitor
+* need to monitor for other servers(other ec2 isntances) to monitor and relabelling...
 
 
 
