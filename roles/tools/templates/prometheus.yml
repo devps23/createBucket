@@ -17,4 +17,7 @@ scrape_configs:
       filters:
         - name: "tag:visual"
           values: ["yes","true"]
+      relabel_configs:
+          - source_labels: name
+            target_label: name
 
