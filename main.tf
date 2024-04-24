@@ -4,6 +4,6 @@ module "demo" {
   component = var.component
   zone_id = var.zone_id
   role  = var.role
-  ssh_user = var.ssh_user
-  ssh_pass = var.ssh_pass
+//  ssh_user = var.ssh_user
+//  ssh_pass = var.ssh_pass
 }
