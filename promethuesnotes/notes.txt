@@ -11,10 +11,27 @@ node_exporter will translate service to prometheus format
 
 The Node Exporter is an agent that gathers system metrics and exposes them in a format which can be ingested by Prometheus.
 to monitor the number of ec2instances in prometheus, we need to use ec2-sd-config
-about aws_ial_policy:
+about aws_iam_policy:
 ======================
 Here the aws_iam_policy block describes an IAM policy that allows read access for a specific ec2 instances.
 We are attaching this policy to an IAM role created in the aws_iam_role block.
 The role has a policy which allows EC2 service to assume the role.
 At the end, aws_iam_role_policy_attachment block is used to attach the policy to the role.
+
+to monitor specific instances in Prometheus:
+============================================
+EC2 SD configurations allow retrieving scrape targets from AWS EC2 instances.
+ specific instances can be monitor in prometheus, use filters.
+ filters:
+   [ - name: <string>
+       values: <string>, [...] ]
+add these filters in configuration file i.e., prometheus.yml file.
+* add "visual" to the tag in aws_instance
+A scrape_config section specifies a set of targets and parameters.
+to know the label name and value use
+ relabel_configs:
+      - source_labels: [__address__]
+
+
+
 

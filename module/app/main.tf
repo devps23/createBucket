@@ -6,6 +6,7 @@ resource "aws_instance" "instance" {
 
   tags = {
     Name = var.component
+
   }
 
 }
@@ -19,7 +20,7 @@ resource "aws_route53_record" "route" {
 
 resource "aws_iam_role" "Prometheus_role" {
   name               = "Prometheus_role"
-  assume_role_policy = data.aws_iam_policy_document.instance-assume-role-policy.json
+ assume_role_policy = data.aws_iam_policy_document.instance-assume-role-policy.json
 
 }
 resource "aws_iam_instance_profile" "instance_profile" {
@@ -48,3 +49,21 @@ resource "aws_iam_policy" "policy" {
     ]
   })
 }
+//create provisiners
+
+//resource "aws_instance" "test" {
+//
+//  connection {
+//    type     = "ssh"
+//    user     = var.ssh_user
+//    password = var.ssh_pass
+//    host     = self.public_ip
+//  }
+//
+//  provisioner "remote-exec" {
+//    inline = [
+//      "sudo pip install ansible",
+//       "sudo install nginx"
+//    ]
+//  }
+//}
