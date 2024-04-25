@@ -11,13 +11,13 @@ resource "aws_instance" "instance" {
     }
   }
   tags = {
-    Name = var.tools_name
+    Name = var.tool_name
     visual = "yes"
   }
 
 }
 resource "aws_route53_record" "route" {
-  name = "${var.tools_name}-${var.env}"
+  name = "${var.tool_name}-${var.env}"
   type = "A"
   zone_id = var.zone_id
   records = [aws_instance.instance.private_ip]
