@@ -7,3 +7,9 @@
   ansible.builtin.dnf:
     name: grafana
     state: present
+
+- name: Start grafana service
+  ansible.builtin.service:
+    name: grafana
+    state: started
+
