@@ -1,0 +1,19 @@
+* Grafana is one of the leading open-source tools for running application analytics,
+visualizing metrics, and time-series data.
+* To project the info(ec2 instance).
+* Grafana offer their own grafana services
+* Install grafana on local systems.
+* grafana.com--->click on downloads--->in that document go to RedHat there click on yum package repository
+under Install grafana "Supported Operating systems---->"Red Hat, RHEL, or Fedora---->click this link"
+/etc/yum.repos.d/grafana.repo----copy this repo
+any automation through operating system is ansible....
+some packages not able to findout directly in the server so we need to use repo file.....
+then grafana package can installed from repo ......
+through automation:
+create a repo file
+Install grafana package
+start service
+ after this check grana installtion,service in linux once its running as expected...
+ then "netstat -lntrp" get the port number
+
+ find default username and password
