@@ -34,7 +34,7 @@ resource "aws_iam_instance_profile" "instance_profile" {
   role = aws_iam_role.Prometheus_role.name
 
 }
-attach policy to the prometheus roles
+//attach policy to the prometheus roles
 resource "aws_iam_role_policy_attachment" "policy_attach" {
   role       = aws_iam_role.Prometheus_role.name
   policy_arn = aws_iam_policy.policy.arn
