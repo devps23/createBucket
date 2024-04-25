@@ -1,9 +1,10 @@
 module "demo" {
+  for_each = var.tools
   source = "./module/app"
+  instance_type=each.value["instance_type"]
+  component= each.value["component"]
   env=var.env
-  component = var.component
   zone_id = var.zone_id
   role  = var.role
-  ssh_user = var.ssh_user
-  ssh_pass = var.ssh_pass
+
 }

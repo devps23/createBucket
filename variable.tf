@@ -1,9 +1,15 @@
 variable "env" {}
-variable "component"{}
 variable "zone_id"{}
 variable "role" {}
-variable "ssh_user" {}
-variable "ssh_pass" {}
-
+variable "tools"{
+  prometheus = {
+    instance_type="t3.micro"
+    component = "prometheus"
+  }
+  grafana = {
+    instance_type="t3.micro"
+    component = "prometheus"
+  }
+}
 
 
