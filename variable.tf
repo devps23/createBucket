@@ -5,7 +5,7 @@ variable "tools" {
   default = {
     prometheus = {
       instance_type = "t3.micro"
-      iam_policy_resource_list = ["ec2:DescribeInstances"]
+      iam_policy_resource_list = "ec2:DescribeInstances"
     }
 
   }
