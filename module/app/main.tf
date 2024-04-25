@@ -7,7 +7,7 @@ resource "aws_instance" "instance" {
     market_type="spot"
     spot_options {
       spot_instance_type = "persistent"
-      instance_interruption_behavior = "spot"
+      instance_interruption_behavior = "stop"
     }
   }
   tags = {
