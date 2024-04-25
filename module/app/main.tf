@@ -42,6 +42,7 @@ resource "aws_iam_role_policy_attachment" "policy_attach" {
 //give the permissions with the help of policy
 resource "aws_iam_policy" "policy" {
   name        = "${var.tool_name}-policy"
+  role       = aws_iam_role.Prometheus_role.name
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
