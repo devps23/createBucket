@@ -8,15 +8,10 @@
     name: grafana
     state: present
 
-- name: copy grafana service
-  ansible.builtin.template:
-    src: grafana-server.service
-    dest: /etc/systemd/system/grafana-server.service.d
-
 - name: Start grafana service
   ansible.builtin.systemd_service:
     state: restarted
     name: grafana-server
     enabled: yes
-    daemon_reload: true
+
 
