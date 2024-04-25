@@ -17,7 +17,7 @@ resource "aws_instance" "instance" {
 
 }
 resource "aws_route53_record" "route" {
-  name = "prometheus-${var.env}"
+  name = "${var.tool_name}-${var.env}"
   type = "A"
   zone_id = var.zone_id
   records = [aws_instance.instance.private_ip]
@@ -25,7 +25,7 @@ resource "aws_route53_record" "route" {
 }
 
 resource "aws_iam_role" "Prometheus_role" {
-  name               = "prometheus_role"
+  name               = "${var.tool_name}_role"
  assume_role_policy = data.aws_iam_policy_document.instance-assume-role-policy.json
 
 }

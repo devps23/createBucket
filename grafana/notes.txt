@@ -13,7 +13,26 @@ through automation:
 create a repo file
 Install grafana package
 start service
- after this check grana installtion,service in linux once its running as expected...
- then "netstat -lntrp" get the port number
+ after this check grafana installation,service in linux once its running as expected...
+ then "netstat -lntp" get the port number
 
- find default username and password
+ find default username and password default username/password is admin/admin--->click on login
+ will see a grafana dashboard
+ leftside-->Go to the connections-->DataSource--->Add Data Source
+ click on Prometheus(data is inside prometheus ,and project this prometheus data in grafana dashboard)
+prometheus server URL:http://172.0.0.0:9090(prometheus private ip address)
+
+* click on dashboards--->create dashboard--->Import dashboards-->Enter Node_exporter port number 1860--->click on Load
+choose prometheus by default (At last) and click
+will see a node_exporter full dashboard(default creation)
+
+most of the times create dashboard with our data....
+
+* click dashboards--->create dashboards---->Add Visualisation----->select data source as "prometheus--->
+at down click on code and enter up query"(project prometheus data on grafana dashboard)
+1---means server up
+0---means server down
+change appearence according to the grafana dashboard
+
+search "Goldern signals google sre"--->satuaration (monitor performance of cpu,instance storage,.....)
+search public grafana dashboards(Node exporter full)
