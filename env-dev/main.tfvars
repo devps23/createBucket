@@ -5,4 +5,3 @@ role = "Prometheus-role"
 
 
 
-s
