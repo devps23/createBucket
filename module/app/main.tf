@@ -1,7 +1,7 @@
 //attach aws instance profile to aws instance to access
 resource "aws_instance" "instance" {
   ami           = data.aws_ami.ami.image_id
-  instance_type = "t3.micro"
+  instance_type = var.instance_type
   iam_instance_profile = aws_iam_instance_profile.instance_profile.name
   instance_market_options {
     market_type="spot"
