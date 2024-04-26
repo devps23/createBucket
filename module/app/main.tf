@@ -36,28 +36,27 @@ resource "aws_iam_instance_profile" "instance_profile" {
   role = aws_iam_role.iam_role.name
 
 }
-////attach policy to the prometheus roles
-//resource "aws_iam_role_policy_attachment" "policy_attach" {
-//***** role = prometheus_role
-//  role       = aws_iam_role.iam_role.name
-//  policy_arn = aws_iam_policy.policy.arn
-//}
-////give the permissions with the help of policy
-//resource "aws_iam_policy" "policy" {
-//  name        = "policy"
-//  policy = jsonencode({
-//    Version = "2012-10-17"
-//    Statement = [
-//      {
-//        Action = [
-//          var.policy_resource_list,
-//        ]
-//        Effect   = "Allow"
-//        Resource = "*"
-//      },
-//    ]
-//  })
-//}
+//attach policy to the prometheus roles
+resource "aws_iam_role_policy_attachment" "policy_attach" {
+  role       = aws_iam_role.iam_role.name
+  policy_arn = aws_iam_policy.policy.arn
+}
+//give the permissions with the help of policy
+resource "aws_iam_policy" "policy" {
+  name        = var.tool_name
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          var.policy_resource_list,
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
 
 
 
