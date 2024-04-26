@@ -31,13 +31,14 @@ resource "aws_iam_role" "iam_role" {
 
 }
 resource "aws_iam_instance_profile" "instance_profile" {
-  name = "instance"
+  name = var.tool_name
 //  prometheus_role
   role = aws_iam_role.iam_role.name
 
 }
 ////attach policy to the prometheus roles
 //resource "aws_iam_role_policy_attachment" "policy_attach" {
+//***** role = prometheus_role
 //  role       = aws_iam_role.iam_role.name
 //  policy_arn = aws_iam_policy.policy.arn
 //}
